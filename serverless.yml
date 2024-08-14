@@ -1,0 +1,22 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: mulraj
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: aws-lambda-serverless
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: aws-lambda-serverless
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  timeout: 30
+
+plugins:
+  - serverless-offline
+  - serverless-dotenv-plugin
+
+functions:
+  pwa-kit:
+    handler: build/ssr.get
+    events:
+      - http: ANY /
+      - http: ANY /{proxy+}

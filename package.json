@@ -1,0 +1,16 @@
+{
+  "name": "aws-lambda-serverless",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "sls-dev": "sls offline start --httpPort 4500"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "serverless-http": "^3.2.0"
+  },
+  "devDependencies": {
+    "serverless-dotenv-plugin": "6.0.0",
+    "serverless-offline": "14.0.0"
+  }
+}

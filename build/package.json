@@ -1,0 +1,130 @@
+{
+  "name": "pwa-kit-seed",
+  "version": "2024.4.19.0",
+  "license": "See license in LICENSE",
+  "engines": {
+    "node": "^16.0.0 || ^18.0.0",
+    "npm": "^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0"
+  },
+  "ccExtensibility": {
+    "extends": "@salesforce/retail-react-app",
+    "overridesDir": "overrides"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.9.1",
+    "@chakra-ui/react": "^2.8.2",
+    "@chakra-ui/utils": "2.0.15",
+    "@commitlint/cli": "^18.6.1",
+    "@commitlint/config-conventional": "^18.6.3",
+    "@csmith/release-it-calver-plugin": "^2023.12.0",
+    "@digitalroute/cz-conventional-changelog-for-jira": "^8.0.1",
+    "@playwright/test": "1.44.1",
+    "@release-it/bumper": "^6.0.1",
+    "@release-it/conventional-changelog": "^8.0.1",
+    "@salesforce/retail-react-app": "2.2.0",
+    "@types/jest": "29.5.12",
+    "@types/jest-axe": "3.5.9",
+    "@types/loadable__component": "^5.13.6",
+    "@types/node-fetch": "^2.6.9",
+    "@types/react": "^18.2.56",
+    "@types/react-helmet": "6.1.11",
+    "@types/react-router-dom": "^5.3.3",
+    "card-validator": "^8.1.1",
+    "commitizen": "^4.3.0",
+    "conventional-changelog-conventionalcommits": "^8.0.0",
+    "dotenv": "^16.3.1",
+    "embla-carousel-auto-height": "^8.0.0-rc23",
+    "embla-carousel-auto-scroll": "^8.0.0-rc23",
+    "embla-carousel-autoplay": "^8.0.0-rc23",
+    "embla-carousel-class-names": "^8.0.0-rc23",
+    "embla-carousel-react": "^8.0.0-rc23",
+    "embla-carousel-wheel-gestures": "^8.0.0-rc05",
+    "eslint-plugin-formatjs": "^4.12.2",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-local": "^4.2.1",
+    "fork-ts-checker-webpack-plugin": "^9.0.2",
+    "husky": "^8.0.3",
+    "jest-axe": "9.0.0",
+    "lint-staged": "^15.2.0",
+    "serverless-dotenv-plugin": "6.0.0",
+    "serverless-offline": "14.0.0",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "analyze-build": "cross-env MOBIFY_ANALYZE=true npm run build",
+    "build": "npm run build-translations && pwa-kit-dev build",
+    "build:cli": "cd scripts/cli && npm run build:cli",
+    "build-translations": "npm run compile-translations && npm run compile-translations:pseudo",
+    "compile-translations": "node ./node_modules/@salesforce/retail-react-app/scripts/translations/compile-folder.js translations",
+    "compile-translations:pseudo": "node ./node_modules/@salesforce/retail-react-app/scripts/translations/compile-pseudo.js translations/en-US.json",
+    "deploy": "node ./scripts/cli/build/cli.js deploy",
+    "extract-default-translations": "node ./node_modules/@salesforce/retail-react-app/scripts/translations/extract-default-messages.js en-US en-GB",
+    "lint": "npm run type-check && eslint \"**/*.{js,jsx,ts,tsx}\"",
+    "lint:fix": "npm run lint -- --fix",
+    "lint-staged": "npm run lint:fix && npm run format:fix",
+    "format": "prettier \"**/*.{js,jsx,ts,tsx,html,css,scss,less,md,yaml,yml,json}\" --ignore-unknown",
+    "format:check": "npm run format -- --check",
+    "format:fix": "npm run format -- --write",
+    "postinstall": "npm run compile-translations && npm run compile-translations:pseudo",
+    "push": "npm run build && pwa-kit-dev push",
+    "prepare": "husky install | chmod ug+x .husky/*",
+    "push:direct": "pwa-kit-dev push",
+    "save-credentials": "pwa-kit-dev save-credentials",
+    "start": "cross-env NODE_ICU_DATA=node_modules/full-icu npm run lint && npm run gen:dw && npm run build-translations && pwa-kit-dev start",
+    "start:inspect": "npm run start -- --inspect",
+    "start:pseudolocale": "npm run extract-default-translations && npm run compile-translations:pseudo && cross-env USE_PSEUDOLOCALE=true npm run start",
+    "tail-logs": "pwa-kit-dev tail-logs",
+    "test": "pwa-kit-dev test",
+    "test:staged": "npm run test --bail --findRelatedTests --coverage=false",
+    "test:lighthouse": "cross-env NODE_ENV=production lhci autorun --config=tests/lighthouserc.js",
+    "test:max-file-size": "npm run build && bundlesize",
+    "test:e2e": "npx playwright test",
+    "type-check": "tsc --noEmit --incremental false",
+    "gen:dw": "node ./overrides/core/pre-build/gen-dw.mjs",
+    "commit": "git-cz",
+    "release": "HUSKY=0 npx release-it -VV",
+    "sls-dev": "sls offline start --httpPort 4500"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./.cz-config.js"
+    }
+  },
+  "bundlesize": [
+    {
+      "path": "build/main.js",
+      "maxSize": "43 kB"
+    },
+    {
+      "path": "build/vendor.js",
+      "maxSize": "320 kB"
+    }
+  ],
+  "browserslist": [
+    "iOS >= 9.0",
+    "Android >= 4.4.4",
+    "last 4 ChromeAndroid versions"
+  ],
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write --ignore-unknown",
+      "npm run test:staged"
+    ],
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write --ignore-unknown"
+    ],
+    "*.{html,css,scss,less,md,yaml,yml,json}": [
+      "prettier --write --ignore-unknown"
+    ]
+  },
+  "dependencies": {
+    "@salesforce/pwa-kit-runtime": "3.7.0",
+    "helmet": "7.1.0",
+    "serverless-http": "3.2.0"
+  }
+}

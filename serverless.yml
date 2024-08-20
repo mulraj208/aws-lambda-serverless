@@ -15,6 +15,12 @@ plugins:
   - serverless-dotenv-plugin
 
 functions:
+  handle-static-asset:
+    handler: handle-static-asset/handler.handler
+    events:
+      - http: 'ANY /mobify'
+      - http: 'ANY /mobify/{proxy+}'
+
   pwa-kit:
     handler: build/ssr.get
     events:

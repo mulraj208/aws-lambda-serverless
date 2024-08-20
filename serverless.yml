@@ -13,6 +13,13 @@ provider:
 plugins:
   - serverless-offline
   - serverless-dotenv-plugin
+  - serverless-domain-manager
+
+custom:
+  customDomain:
+    domainName: pwa-kit-poc.mulrajdev.com
+    basePath: ''
+    createRoute53Record: true
 
 functions:
   handle-static-asset:

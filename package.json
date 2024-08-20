@@ -11,6 +11,8 @@
   },
   "devDependencies": {
     "aws-sdk": "2.1677.0",
+    "mime-types": "2.1.35",
+    "serverless-domain-manager": "7.3.8",
     "serverless-dotenv-plugin": "6.0.0",
     "serverless-offline": "14.0.0"
   }

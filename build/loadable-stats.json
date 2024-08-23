@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "hash": "2080b68da80102c6f408",
+  "hash": "e866fe873b4fbfde83ed",
   "publicPath": "",
   "outputPath": "/Users/mulrajgupta/Desktop/aiopsgroup/est/fe-pwa-kit-seed/build",
   "assetsByChunkName": {
@@ -106,7 +106,7 @@
     {
       "type": "asset",
       "name": "main.js",
-      "size": 264490,
+      "size": 264363,
       "emitted": false,
       "comparedForEmit": false,
       "cached": true,

@@ -10,6 +10,10 @@ module.exports = {
     EINSTEIN_IS_PRODUCTION: false,
     PROJECT_ID: "pwa-kit-demo-poc",
     SANDBOX_URL: "https://zzuz-008.dx.commercecloud.salesforce.com/",
+    BUNDLE_ID: "167",
+    DEPLOY_TARGET: "default",
+    EXTERNAL_DOMAIN_NAME: "pwa-kit-poc.mulrajdev.com",
+    MOBIFY_PROPERTY_ID: "mobify-storefront.com",
     API_COMMERCE_CLOUD: "kv7kzm78.api.commercecloud.salesforce.com",
     DX_COMMERCE_CLOUD: "zzuz-008.dx.commercecloud.salesforce.com"
 }

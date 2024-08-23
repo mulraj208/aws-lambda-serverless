@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "sls-dev": "sls offline start --httpPort 4500"
+    "sls-dev": "sls offline start --noPrependStageInUrl"
   },
   "dependencies": {
     "express": "^4.19.2",

@@ -6,7 +6,9 @@
     "sls-dev": "sls offline start --noPrependStageInUrl"
   },
   "dependencies": {
+    "@salesforce/pwa-kit-runtime": "3.3.0",
     "express": "^4.19.2",
+    "helmet": "7.1.0",
     "serverless-http": "^3.2.0"
   },
   "devDependencies": {

@@ -4,7 +4,7 @@ const url = require('url');
 
 const BUCKET_NAME = 'api-gateway-s3-pwa-kit'
 
-exports.handler = async (event) => {
+exports.get = async (event) => {
     try {
         const s3 = new AWS.S3();
         const path = url.parse(event.path).pathname;

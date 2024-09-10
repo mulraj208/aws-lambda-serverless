@@ -25,8 +25,14 @@ custom:
     createRoute53Record: true
 
 functions:
+  handle-api-proxy:
+    handler: handle-api-proxy/handler.get
+    events:
+      - http: 'ANY /mobify/proxy'
+      - http: 'ANY /mobify/proxy/{proxy+}'
+
   handle-static-asset:
-    handler: handle-static-asset/handler.handler
+    handler: handle-static-asset/handler.get
     events:
       - http: 'ANY /mobify/bundle'
       - http: 'ANY /mobify/bundle/{proxy+}'

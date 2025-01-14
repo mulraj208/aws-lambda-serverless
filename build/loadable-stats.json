@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "hash": "e866fe873b4fbfde83ed",
+  "hash": "c78370e2ffbd5d24adee",
   "publicPath": "",
   "outputPath": "/Users/mulrajgupta/Desktop/aiopsgroup/est/fe-pwa-kit-seed/build",
   "assetsByChunkName": {
@@ -106,7 +106,7 @@
     {
       "type": "asset",
       "name": "main.js",
-      "size": 264363,
+      "size": 264408,
       "emitted": false,
       "comparedForEmit": false,
       "cached": true,
@@ -237,8 +237,8 @@
     },
     {
       "type": "asset",
-      "name": "648.js",
-      "size": 11930,
+      "name": "428.js",
+      "size": 12236,
       "emitted": false,
       "comparedForEmit": false,
       "cached": true,
@@ -251,7 +251,7 @@
       "auxiliaryChunkNames": [],
       "auxiliaryChunkIdHints": [],
       "chunks": [
-        648
+        428
       ],
       "auxiliaryChunks": []
     },
@@ -628,7 +628,7 @@
     {
       "type": "asset",
       "name": "pages-product-detail.js",
-      "size": 684,
+      "size": 820,
       "emitted": false,
       "comparedForEmit": false,
       "cached": true,
@@ -716,7 +716,7 @@
       "chunks": [
         736,
         341,
-        648,
+        428,
         188,
         363
       ],
@@ -728,7 +728,7 @@
           "name": "341.js"
         },
         {
-          "name": "648.js"
+          "name": "428.js"
         },
         {
           "name": "188.js"
@@ -770,7 +770,7 @@
       "chunks": [
         736,
         341,
-        648,
+        428,
         7
       ],
       "assets": [
@@ -781,7 +781,7 @@
           "name": "341.js"
         },
         {
-          "name": "648.js"
+          "name": "428.js"
         },
         {
           "name": "pages-product-detail.js"
@@ -1293,9 +1293,9 @@
       ]
     },
     {
-      "id": 648,
+      "id": 428,
       "files": [
-        "648.js"
+        "428.js"
       ]
     },
     {

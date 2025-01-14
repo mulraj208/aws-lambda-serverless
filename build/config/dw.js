@@ -10,10 +10,15 @@ module.exports = {
     EINSTEIN_IS_PRODUCTION: false,
     PROJECT_ID: "pwa-kit-demo-poc",
     SANDBOX_URL: "https://zzuz-008.dx.commercecloud.salesforce.com/",
+    GTM_ID: "GTM-KQTQ7TGH",
+    MOBIFY_ANALYZE: true,
+    MEASURE: true,
     BUNDLE_ID: "167",
     DEPLOY_TARGET: "default",
     EXTERNAL_DOMAIN_NAME: "pwa-kit-poc.mulrajdev.com",
     MOBIFY_PROPERTY_ID: "mobify-storefront.com",
+    EMAIL_ID: "mgupta@aiopsgroup.com",
+    MRT_API_KEY: "dEPiWCwMRfVzfhxmkLvCRHoA1ajydVtsrFVhGLRZgKg",
     API_COMMERCE_CLOUD: "kv7kzm78.api.commercecloud.salesforce.com",
     DX_COMMERCE_CLOUD: "zzuz-008.dx.commercecloud.salesforce.com"
 }
